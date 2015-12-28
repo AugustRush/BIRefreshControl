@@ -42,7 +42,25 @@
 
 - (void)loadingFooter:(BILoadingFooter *)footer didChangedLoadingProgress:(CGFloat)progress {
     CAShapeLayer *layer = (CAShapeLayer *)self.layer;
-    layer.strokeEnd = progress;
+    if (self.state != BILoadingFooterStateLoading) {
+        layer.strokeEnd = progress - 0.5;        
+    }else{
+        layer.strokeEnd = 1.5;
+    }
+}
+
+- (void)loadingFooter:(BILoadingFooter *)footer didChangedLoadingState:(BILoadingFooterState)state {
+    switch (state) {
+        case BILoadingFooterStateInitial: {
+            
+            break;
+        }
+        case BILoadingFooterStateLoading:
+        case BILoadingFooterStateFinished: {
+            [self loadingFooter:footer didChangedLoadingProgress:1.5];
+            break;
+        }
+    }
 }
 
 @end

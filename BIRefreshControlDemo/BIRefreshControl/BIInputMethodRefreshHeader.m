@@ -44,7 +44,11 @@
 
 - (void)refreshControl:(BIRefreshHeader *)control didChangeRefreshProgress:(CGFloat)progress {
     CAShapeLayer *layer = (CAShapeLayer *)self.layer;
-    layer.strokeEnd = progress;
+    if (self.state != BIRefreshHeaderStateRefreshing) {
+        layer.strokeEnd = progress - 0.5;
+    }else{
+        layer.strokeEnd = 1.5;
+    }
 }
 
 - (void)refreshControl:(BIRefreshHeader *)control didChangeRefreshState:(BIRefreshHeaderState)state {
@@ -53,12 +57,9 @@
 
             break;
         }
-        case BIRefreshHeaderStateRefreshing: {
-
-            break;
-        }
+        case BIRefreshHeaderStateRefreshing:
         case BIRefreshHeaderStateFinished: {
-
+            [self refreshControl:control didChangeRefreshProgress:1.5];
             break;
         }
         default: {
