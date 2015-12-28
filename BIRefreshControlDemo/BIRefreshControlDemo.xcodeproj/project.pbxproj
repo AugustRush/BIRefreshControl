@@ -13,6 +13,7 @@
 		9740804F1C2E3958002AA364 /* BIRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 974080471C2E3958002AA364 /* BIRefreshHeader.m */; };
 		974080501C2E3958002AA364 /* UIScrollView+BICustomRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 974080491C2E3958002AA364 /* UIScrollView+BICustomRefreshControl.m */; };
 		974080511C2E3958002AA364 /* UIScrollView+BIRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9740804B1C2E3958002AA364 /* UIScrollView+BIRefreshControl.m */; };
+		975592C11C30C83800B26461 /* NSString+Path.m in Sources */ = {isa = PBXBuildFile; fileRef = 975592C01C30C83800B26461 /* NSString+Path.m */; };
 		9765E43E1C04418600120F3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9765E43D1C04418600120F3B /* main.m */; };
 		9765E4411C04418700120F3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9765E4401C04418700120F3B /* AppDelegate.m */; };
 		9765E4441C04418700120F3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9765E4431C04418700120F3B /* ViewController.m */; };
@@ -54,6 +55,8 @@
 		974080491C2E3958002AA364 /* UIScrollView+BICustomRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+BICustomRefreshControl.m"; sourceTree = "<group>"; };
 		9740804A1C2E3958002AA364 /* UIScrollView+BIRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+BIRefreshControl.h"; sourceTree = "<group>"; };
 		9740804B1C2E3958002AA364 /* UIScrollView+BIRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+BIRefreshControl.m"; sourceTree = "<group>"; };
+		975592BF1C30C83800B26461 /* NSString+Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Path.h"; sourceTree = "<group>"; };
+		975592C01C30C83800B26461 /* NSString+Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Path.m"; sourceTree = "<group>"; };
 		9765E4391C04418600120F3B /* BIRefreshControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BIRefreshControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9765E43D1C04418600120F3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9765E43F1C04418700120F3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -101,21 +104,39 @@
 			isa = PBXGroup;
 			children = (
 				974080451C2E3958002AA364 /* BIRefresh.h */,
-				9740803F1C2E3958002AA364 /* BIInputMehodLoadingFooter.h */,
-				974080401C2E3958002AA364 /* BIInputMehodLoadingFooter.m */,
-				974080411C2E3958002AA364 /* BIInputMethodRefreshHeader.h */,
-				974080421C2E3958002AA364 /* BIInputMethodRefreshHeader.m */,
+				975592BE1C30C80700B26461 /* Custom */,
+				975592BD1C30C7CF00B26461 /* Classes */,
+			);
+			path = BIRefreshControl;
+			sourceTree = SOURCE_ROOT;
+		};
+		975592BD1C30C7CF00B26461 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9740804A1C2E3958002AA364 /* UIScrollView+BIRefreshControl.h */,
+				9740804B1C2E3958002AA364 /* UIScrollView+BIRefreshControl.m */,
 				974080431C2E3958002AA364 /* BILoadingFooter.h */,
 				974080441C2E3958002AA364 /* BILoadingFooter.m */,
 				974080461C2E3958002AA364 /* BIRefreshHeader.h */,
 				974080471C2E3958002AA364 /* BIRefreshHeader.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		975592BE1C30C80700B26461 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				975592BF1C30C83800B26461 /* NSString+Path.h */,
+				975592C01C30C83800B26461 /* NSString+Path.m */,
+				9740803F1C2E3958002AA364 /* BIInputMehodLoadingFooter.h */,
+				974080401C2E3958002AA364 /* BIInputMehodLoadingFooter.m */,
+				974080411C2E3958002AA364 /* BIInputMethodRefreshHeader.h */,
+				974080421C2E3958002AA364 /* BIInputMethodRefreshHeader.m */,
 				974080481C2E3958002AA364 /* UIScrollView+BICustomRefreshControl.h */,
 				974080491C2E3958002AA364 /* UIScrollView+BICustomRefreshControl.m */,
-				9740804A1C2E3958002AA364 /* UIScrollView+BIRefreshControl.h */,
-				9740804B1C2E3958002AA364 /* UIScrollView+BIRefreshControl.m */,
 			);
-			path = BIRefreshControl;
-			sourceTree = SOURCE_ROOT;
+			name = Custom;
+			sourceTree = "<group>";
 		};
 		9765E4301C04418600120F3B = {
 			isa = PBXGroup;
@@ -314,6 +335,7 @@
 				974080501C2E3958002AA364 /* UIScrollView+BICustomRefreshControl.m in Sources */,
 				9740804F1C2E3958002AA364 /* BIRefreshHeader.m in Sources */,
 				9740804D1C2E3958002AA364 /* BIInputMethodRefreshHeader.m in Sources */,
+				975592C11C30C83800B26461 /* NSString+Path.m in Sources */,
 				9765E4411C04418700120F3B /* AppDelegate.m in Sources */,
 				9765E43E1C04418600120F3B /* main.m in Sources */,
 				9740804E1C2E3958002AA364 /* BILoadingFooter.m in Sources */,

@@ -31,6 +31,4 @@
 - (void)bi_startLoading;
 - (void)bi_stopLoading;
 
-- (void)relayoutLoadingFooterWithHeight:(CGFloat)height;
-
 @end

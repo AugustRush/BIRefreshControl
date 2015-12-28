@@ -7,22 +7,42 @@
 //
 
 #import "BIInputMehodLoadingFooter.h"
+#import "NSString+Path.h"
 
 @implementation BIInputMehodLoadingFooter
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.delegate = self;
-        self.backgroundColor = [UIColor blackColor];
+        [self setUp];
     }
     return self;
+}
+
++ (Class)layerClass {
+    return [CAShapeLayer class];
+}
+
+#pragma mark - private methods
+
+- (void)setUp {
+    _loadingAnimatedText = @"Just Loading text";
+    self.delegate = self;
+    self.backgroundColor = [UIColor whiteColor];
+    CAShapeLayer *layer = (CAShapeLayer *)self.layer;
+    layer.strokeColor = [UIColor colorWithRed:252/255.0 green:70/255.0 blue:209/255.0 alpha:1].CGColor;
+    layer.lineCap = kCALineCapRound;
+    layer.lineWidth = 3;
+    layer.fillColor = [UIColor clearColor].CGColor;
+    layer.autoreverses = YES;
+    layer.path = [_loadingAnimatedText bezierPathWithFont:[UIFont fontWithName:@"noteworthy" size:48]].CGPath;
 }
 
 #pragma mark - BILoadingFooterDelegate methods
 
 - (void)loadingFooter:(BILoadingFooter *)footer didChangedLoadingProgress:(CGFloat)progress {
-    self.backgroundColor = [UIColor colorWithRed:progress green:progress blue:progress alpha:1];
+    CAShapeLayer *layer = (CAShapeLayer *)self.layer;
+    layer.strokeEnd = progress;
 }
 
 @end

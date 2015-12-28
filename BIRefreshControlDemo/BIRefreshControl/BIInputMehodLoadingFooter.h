@@ -10,4 +10,6 @@
 
 @interface BIInputMehodLoadingFooter : BILoadingFooter<BILoadingFooterDelegate>
 
+@property (nonatomic, copy) NSString *loadingAnimatedText;
+
 @end

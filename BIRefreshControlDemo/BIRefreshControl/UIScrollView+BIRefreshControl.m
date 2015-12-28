@@ -207,8 +207,4 @@
   ]];
 }
 
-- (void)relayoutLoadingFooterWithHeight:(CGFloat)height {
-  NSLog(@"height is %f", height);
-}
-
 @end

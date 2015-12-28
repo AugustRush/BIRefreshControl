@@ -10,4 +10,6 @@
 
 @interface BIInputMethodRefreshHeader : BIRefreshHeader<BIRefreshHeaderDelegate>
 
+@property (nonatomic, copy) NSString *refreshAnimatedText;
+
 @end
