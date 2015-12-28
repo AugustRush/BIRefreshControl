@@ -28,8 +28,9 @@
 #pragma mark - private methods
 
 - (void)setUp {
-    _refreshAnimatedText = @"Just Refreshing text";
+    _refreshAnimatedText = @"****  Refreshing  ****";
     self.delegate = self;
+    self.clipsToBounds = YES;
     self.backgroundColor = [UIColor whiteColor];
     CAShapeLayer *layer = (CAShapeLayer *)self.layer;
     layer.strokeColor = [UIColor colorWithRed:252/255.0 green:70/255.0 blue:209/255.0 alpha:1].CGColor;
@@ -37,7 +38,7 @@
     layer.lineWidth = 3;
     layer.fillColor = [UIColor clearColor].CGColor;
     layer.autoreverses = YES;
-    layer.path = [_refreshAnimatedText bezierPathWithFont:[UIFont fontWithName:@"noteworthy" size:48]].CGPath;
+    layer.path = [_refreshAnimatedText bezierPathWithFont:[UIFont fontWithName:@"Snell Roundhand" size:40]].CGPath;
 }
 
 #pragma mark - BIRefreshHeaderDelegate methods
